@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import os
-import pickle
 from base64 import b64decode,b64encode
 from binascii import hexlify, unhexlify
 from os import popen
@@ -10,7 +9,7 @@ from Crypto.Cipher import AES
 from Crypto import Random
 
 
-from flask import Flask, request, make_response, render_template_string
+from flask import Flask, request, make_response, render_template_string, Markup
 
 
 app = Flask(__name__)
@@ -105,7 +104,16 @@ def evaluate():
     </html>
     """
 
+#xss
+@app.route('/apache2', methods=['GET'])
+def apache2():
+    param = request.args.get('param', 'not set')
 
+    #param = Markup.escape(param)
+
+    html = open('apache.html').read()
+    response = make_response(html.replace('{{ param }}', param))
+    return response
 
 # command injection
 @app.route('/lookup', methods = ['POST', 'GET'])
@@ -182,8 +190,3 @@ def sayhi():
    </html>
    """ %(name)
    return render_template_string(template)
-
-
-if __name__ == "__main__":
-   app.run(host='localhost', port=4000)
-
