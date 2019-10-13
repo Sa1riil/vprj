@@ -1,3 +1,4 @@
+Python2.
 Rezolvare:
 
 1.Python code injection
