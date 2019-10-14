@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import os
-import pickle
 from base64 import b64decode,b64encode
 from binascii import hexlify, unhexlify
 from os import popen
@@ -78,7 +77,15 @@ def path_traversal():
     if not image_name:
         return 404
     else:
-        return send_file(os.path.join(os.getcwd(), image_name))
+        if "../" in image_name or "..\.." in image_name:
+            return """
+            <html>
+                <body>""" + "Result:\n<br>If you try any other tricks, the session will be stopped.\n" + """
+                </body>
+            </html>
+            """
+        else:
+            return send_file(os.path.join(os.getcwd(), image_name))
 
 @app.route('/apache2', methods=['GET'])
 def apache2():
