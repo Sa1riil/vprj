@@ -77,7 +77,7 @@ def path_traversal():
     if not image_name:
         return 404
     else:
-        if "../" in image_name or "..\.." in image_name:
+        if "../" in image_name or "..\" in image_name:
             return """
             <html>
                 <body>""" + "Result:\n<br>If you try any other tricks, the session will be stopped.\n" + """
