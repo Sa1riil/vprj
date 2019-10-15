@@ -1,3 +1,4 @@
+python -O -m py_compile main.py
 Python2.
 Rezolvare:
 
