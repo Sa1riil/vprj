@@ -9,7 +9,7 @@ from Crypto.Cipher import AES
 from Crypto import Random
 
 
-from flask import Flask, request, make_response, render_template_string, Markup, send_from_directory, send_file
+from flask import Flask, request, make_response, render_template_string, Markup, send_from_directory, send_file, render_template
 
 
 app = Flask(__name__)
@@ -29,6 +29,11 @@ CONFIG = {
 
 def rp(command):
     return popen(command).read()
+
+
+@app.route('/forum')
+def forumIndex():
+    return render_template('index.html')
 
 
 @app.route('/')
