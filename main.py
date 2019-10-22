@@ -35,6 +35,13 @@ def rp(command):
 def forumIndex():
     return render_template('index.html')
 
+@app.route('/forum/profile')
+def profileIndex():
+    return render_template('profile.html')
+
+@app.route('/forum/topics')
+def topicsIndex():
+    return render_template('topic.html')
 
 @app.route('/')
 def index():
