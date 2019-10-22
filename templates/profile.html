@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Forum</title>
+<meta http-equiv="content-language" content="en-us" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="Author Name Goes Here" />
+<meta name="design" content="Sadhana Ganapathiraju" />
+<meta name="copyright" content="Copyright Goes Here" />
+<meta name="description" content="Description Goes Here" />
+<meta name="keywords" content="And, Finally, Keywords Go Here." />
+<link rel="stylesheet" type="text/css" media="screen" href="screen.css" />
+<!--[if lt ie 7]><link rel="stylesheet" type="text/css" media="screen" href="ie-win.css" /><![endif]-->
+</head>
+<body>
+<div id="header">
+  <h1>Forum vulnerabilitati</h1>
+</div>
+<div id="navigation">
+  <ul>
+    <li id="lhome"><a href="#00">Home</a></li>
+    <li id="lsolutions" class="active"><a href="#02">Profile</a></li>
+    <li id="lmysterious"><a href="#03">Forum</a></li>
+  </ul>
+</div>
+<div id="wrapper">
+  <div id="content-wrapper">
+    <div id="content">
+      <form enctype="multipart/form-data" method="post" action="takeprofedit.php">
+        <table class="mCenter" border="1" cellspacing=0 cellpadding="5" width="880">
+        <colgroup><col width="150"><col></colgroup>
+        <tr><td class="heading" valign="top" align="right">Numele afisat pe forum</td><td valign="top" align="left"><input type=text size=10 name=postsperpage value="new user"> </td></tr>
+        <tr><td class="heading" valign="top" align="right">Acceptă mesaje private</td><td valign="top" align="left"><input type=radio name=acceptpms checked value=yes>Toate(excepţie de la cei ignoraţi)
+        <input type=radio name=acceptpms value=friends>Doar de la prieteni
+        <input type=radio name=acceptpms value=no>Doar de la administraţie</td></tr><tr><td class="heading" valign="top" align="right">Notificare prin Email</td><td valign="top" align="left"><input type=checkbox name=pmnotif checked value=yes> Anunţă-mă la primirea unui mesaj privat<br>
+        <input type=checkbox name=notifnotif checked value=yes> Anunţă-mă la primirea unei notificări<br></td></tr><tr id="my_category_show"><td class="heading" valign="top" align="right"><a name="defaut_browse"></a>Arată categoriile</td><td valign="top" align="left"><table id="categs">
+        <tr><td colspan=2 class=bottom align="center"><input name="catall" value="yes" type="checkbox" checked> Toate</td></tr>
+        <tr>
+        <td class=bottom style='padding-right: 5px'><input name=cat11 type="checkbox" checked disabled value='yes'>&nbsp;Animation</td>
+        <td class=bottom style='padding-right: 5px'><input name=cat10 type="checkbox" checked disabled value='yes'>&nbsp;Anime</td>
+        </tr><tr><td class=bottom style='padding-right: 5px'><input name=cat3 type="checkbox" checked disabled value='yes'>&nbsp;Appz</td>
+        <td class=bottom style='padding-right: 5px'><input name=cat8 type="checkbox" checked disabled value='yes'>&nbsp;Books</td>
+        </tr><tr><td class=bottom style='padding-right: 5px'><input name=cat14 type="checkbox" checked disabled value='yes'>&nbsp;Books Audio</td>
+        <td class=bottom style='padding-right: 5px'><input name=cat12 type="checkbox" checked disabled value='yes'>&nbsp;DVD</td>
+        </tr><tr><td class=bottom style='padding-right: 5px'><input name=cat4 type="checkbox" checked disabled value='yes'>&nbsp;Games</td>
+        <td class=bottom style='padding-right: 5px'><input name=cat18 type="checkbox" checked disabled value='yes'>&nbsp;HDTV</td>
+        </tr><tr><td class=bottom style='padding-right: 5px'><input name=cat1 type="checkbox" checked disabled value='yes'>&nbsp;Movies</td>
+        <td class=bottom style='padding-right: 5px'><input name=cat13 type="checkbox" checked disabled value='yes'>&nbsp;Movies Documentary</td>
+        </tr><tr><td class=bottom style='padding-right: 5px'><input name=cat2 type="checkbox" checked disabled value='yes'>&nbsp;Music</td>
+        <td class=bottom style='padding-right: 5px'><input name=cat9 type="checkbox" checked disabled value='yes'>&nbsp;Music Video</td>
+        </tr><tr><td class=bottom style='padding-right: 5px'><input name=cat7 type="checkbox" checked disabled value='yes'>&nbsp;Other</td>
+        <td class=bottom style='padding-right: 5px'><input name=cat16 type="checkbox" checked disabled value='yes'>&nbsp;Photos</td>
+        </tr><tr><td class=bottom style='padding-right: 5px'><input name=cat17 type="checkbox" checked disabled value='yes'>&nbsp;Sport</td>
+        <td class=bottom style='padding-right: 5px'><input name=cat5 type="checkbox" checked disabled value='yes'>&nbsp;TV</td>
+        </tr><tr><td class=bottom style='padding-right: 5px'><input name=cat15 type="checkbox" checked disabled value='yes'>&nbsp;Video Lessons</td>
+        </tr></table>
+        </td></tr><tr><td class="heading" valign="top" align="right">Limbă</td><td valign="top" align="left"><select name=language>
+        <option value=0 selected>-</option>
+        <option value=1>Română</option>
+        <option value=2>English</option>
+        </select></td></tr><tr><td class="heading" valign="top" align="right">Regiune</td><td valign="top" align="left"><select name=region>
+        <option value=0>-</option>
+        <option value=10>Bucuresti</option>
+        
+        </select></td></tr><tr><td class="heading" valign="top" align="right">Sex</td><td valign="top" align="left"><select name=gender>
+        <option value=0 selected>-</option>
+        <option value=1>Masculin</option>
+        <option value=2>Feminin</option>
+        </select></td></tr>
+        </td></tr><tr><td colspan="2" align="center"><input type="submit" value="Salvează" style='height: 25px'> <input type="reset" value="Schimbă înapoi" style='height: 25px'></td></tr>
+        </table>
+        </form>
+        <script type="text/javascript" src="./js/my.js"></script>
+        <script type="text/javascript">
+        $j(function($){
+          var email_temp = '';
+          $('#ckb_change_email').click(function() {
+            if ($(this).attr('checked')) {
+              $('#email').attr('disabled',false);
+              email_temp = $('#email')[0].value;
+              $('#email')[0].value='';
+            } else {
+              $('#email').attr('disabled',true);
+              $('#email')[0].value=email_temp;
+            }
+          });
+        
+          });
+        </script>
+        </div><br />
+        <table class="main footdisclaimer" align=center border=0 cellspacing=0 cellpadding=0>
+        <tr><td class=embedded>
+        </td></tr>
+        </table>
+      
+    </div>
+  </div>
+  
+<div id="footer">
+  <p>Copyright &copy; </p>
+</div>
+</body>
+</html>
