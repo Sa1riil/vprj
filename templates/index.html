@@ -26,6 +26,16 @@
 <div id="wrapper">
   <div id="content-wrapper">
     <div id="content">
+        <form method="post" action="/forum" name="topic_msg" >
+          <div id="after_comment_box" class=""></div>
+          <input type="submit" value="Cauta" style="float: right">
+          <input style="float: right; margin-right: 20px" type=text size=10 name=search value=""> 
+        </form>
+          <div class="heading" valign="top" align="left">    
+   
+   
+    
+      {{ searchResult }}
       <h4>Categories</h4>
       <dl>
         <dt>Web development</dt>

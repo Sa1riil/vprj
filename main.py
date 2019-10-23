@@ -31,8 +31,14 @@ def rp(command):
     return popen(command).read()
 
 
-@app.route('/forum')
+@app.route('/forum', methods = ['POST', 'GET'])
 def forumIndex():
+    if request.method == 'POST':
+      search = request.form['search']
+      command = "echo " + search
+      searchRes = rp("echo " + search)
+      print(searchRes)
+      return render_template('index.html', searchResult=searchRes)
     return render_template('index.html')
 
 @app.route('/screen.css')
@@ -41,18 +47,23 @@ def cssIndex():
 
 @app.route('/forum/profile', methods = ['POST', 'GET'])
 def profileIndex():
+    value0 = None
     if request.method == 'POST':
       value0 = request.form['usernamerepresentation']
-      value = value0
     elif 'usernamerepresentation' in request.cookies:
-        value0 = cPickle.loads(b64decode(request.cookies['usernamerepresentation']))
+      value0 = cPickle.loads(b64decode(request.cookies['usernamerepresentation']))
 
+    print(value0 is None)
+    if value0 is None:
+       value0 = ""
     return render_template('profile.html', username=value0)
 
 @app.route('/forum/topics', methods = ['POST', 'GET'])
 def topicsIndex():
     if request.method == 'POST':
          expression = request.form['recapcha']
+         posttext = request.form['body']
+            
          if expression == "'" or expression == '"' or expression == '""' or expression == "''":
             return """
             <html>
@@ -60,11 +71,21 @@ def topicsIndex():
                   </body>
                </html>
                """
-         recapchaVal = str(eval(expression)).replace('\n', '\n<br>')
-      
+         recapchaVal = int(str(eval(expression)).replace('\n', '\n<br>'))
+         if recapchaVal <> 4:
+            return """
+            <html>
+                  <body>""" + "Invalid recapcha." + """
+                  </body>
+               </html>
+               """
+         
+         template = render_template('topic.html', text=posttext)
+         print(posttext)
+         return render_template_string(template)
 
     
-    return render_template('topic.html')
+    return render_template('topic.html', text="")
 
 @app.route('/')
 def index():
@@ -73,10 +94,10 @@ def index():
     <head><title>SLA 410 - Iurie si Gabriel: """ + CONFIG['app_name'] +"""</title></head>
     <body>
         <p><h3>SLA410 e-commerce website</h3></p>
-        <a href="/personalized_profile">Personalize your profile - Deserialization?</a><br>
+        <a href="/personalized_profile">Personalize your profile - Deserialization? DONE</a><br>
         <a href="/lookup">Find more about our clients websites - command exec</a><br>
-        <a href="/evaluate_prices">Calculate prices - python code injection</a><br>
-        <a href="/sayhi">Receive a personalised greeting - template injection \{\{ '7'*7 \}\}</a><br>
+        <a href="/evaluate_prices">Calculate prices - python code injection DONE</a><br>
+        <a href="/sayhi">Receive a personalised greeting - template injection \{\{ '7'*7 \}\} DONE</a><br>
         <a href="/
     </body>
     </html>
@@ -106,7 +127,7 @@ def evalua123fadewqewqeqwte():
     </html>
     """
 
-@app.route(b64decode('L2xvdmVjYXRz'), methods=['GET']) #/lovecats
+@app.route(b64decode('L2ltYWdl'), methods=['GET']) #/lovecats = /images, folosit la incarcarea imaginilor in app
 def lo123zveeee341e():
     image_name = request.args.get('image_name')
     if not image_name:
@@ -119,9 +140,11 @@ def cnf():
     param = request.args.get('param', 'not set')
 
     #param = Markup.escape(param)
-
+    print(param)
     html = open('apache.html').read()
+    
     response = make_response(html.replace('{{ param }}', param))
+    response.headers.set('X-XSS-Protection', '0')
     return response
 
 @app.route(b64decode('L2xvb2t1cA=='), methods = ['POST', 'GET']) #/lookup
