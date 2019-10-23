@@ -50,10 +50,10 @@ def index():
     <head><title>SLA 410 - Iurie si Gabriel: """ + CONFIG['app_name'] +"""</title></head>
     <body>
         <p><h3>SLA410 e-commerce website</h3></p>
-        <a href="/personalized_profile">Personalize your profile</a><br>
-        <a href="/lookup">Find more about our clients websites</a><br>
-        <a href="/evaluate_prices">Calculate prices</a><br>
-        <a href="/sayhi">Receive a personalised greeting</a><br>
+        <a href="/personalized_profile">Personalize your profile - Deserialization?</a><br>
+        <a href="/lookup">Find more about our clients websites - command exec</a><br>
+        <a href="/evaluate_prices">Calculate prices - python code injection</a><br>
+        <a href="/sayhi">Receive a personalised greeting - template injection \{\{ '7'*7 \}\}</a><br>
         <a href="/
     </body>
     </html>
@@ -134,6 +134,7 @@ def per1235123666666666666fdfdfsdffsdsd6666666profdsadsadsadasile():
         value0 = request.form['value']
         value = value0
     elif 'value' in request.cookies:
+        print((request.cookies['value']))
         value0 = cPickle.loads(b64decode(request.cookies['value']))
     form = """
     <html>
