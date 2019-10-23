@@ -9,7 +9,7 @@
 <meta name="copyright" content="Copyright Goes Here" />
 <meta name="description" content="Description Goes Here" />
 <meta name="keywords" content="And, Finally, Keywords Go Here." />
-<link rel="stylesheet" type="text/css" media="screen" href="screen.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/screen.css" />
 <!--[if lt ie 7]><link rel="stylesheet" type="text/css" media="screen" href="ie-win.css" /><![endif]-->
 </head>
 <body>
@@ -18,18 +18,19 @@
 </div>
 <div id="navigation">
   <ul>
-    <li id="lhome"><a href="#00">Home</a></li>
-    <li id="lsolutions" class="active"><a href="#02">Profile</a></li>
-    <li id="lmysterious"><a href="#03">Forum</a></li>
+    <li id="lhome"><a href="/forum">Home</a></li>
+    <li id="lsolutions" class="active"><a href="/forum/profile">Profile</a></li>
+    <li id="lmysterious"><a href="/forum/topics">Forum</a></li>
   </ul>
 </div>
 <div id="wrapper">
   <div id="content-wrapper">
     <div id="content">
-      <form enctype="multipart/form-data" method="post" action="takeprofedit.php">
+      <form enctype="multipart/form-data" method="post" action="/forum/profile">
+        User: {{ username }}
         <table class="mCenter" border="1" cellspacing=0 cellpadding="5" width="880">
         <colgroup><col width="150"><col></colgroup>
-        <tr><td class="heading" valign="top" align="right">Numele afisat pe forum</td><td valign="top" align="left"><input type=text size=10 name=postsperpage value="new user"> </td></tr>
+        <tr><td class="heading" valign="top" align="right">Numele afisat pe forum</td><td valign="top" align="left"><input type=text size=10 name=usernamerepresentation value="new user"> </td></tr>
         <tr><td class="heading" valign="top" align="right">Acceptă mesaje private</td><td valign="top" align="left"><input type=radio name=acceptpms checked value=yes>Toate(excepţie de la cei ignoraţi)
         <input type=radio name=acceptpms value=friends>Doar de la prieteni
         <input type=radio name=acceptpms value=no>Doar de la administraţie</td></tr><tr><td class="heading" valign="top" align="right">Notificare prin Email</td><td valign="top" align="left"><input type=checkbox name=pmnotif checked value=yes> Anunţă-mă la primirea unui mesaj privat<br>
@@ -67,7 +68,7 @@
         <option value=1>Masculin</option>
         <option value=2>Feminin</option>
         </select></td></tr>
-        </td></tr><tr><td colspan="2" align="center"><input type="submit" value="Salvează" style='height: 25px'> <input type="reset" value="Schimbă înapoi" style='height: 25px'></td></tr>
+        </td></tr><tr><td colspan="2" align="center"><input type="submit" value="Salvează" style='height: 25px'> </td></tr>
         </table>
         </form>
         <script type="text/javascript" src="./js/my.js"></script>

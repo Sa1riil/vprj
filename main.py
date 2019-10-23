@@ -9,7 +9,7 @@ from Crypto.Cipher import AES
 from Crypto import Random
 
 
-from flask import Flask, request, make_response, render_template_string, Markup, send_from_directory, send_file, render_template
+from flask import Flask, request, make_response, render_template_string, Markup, send_from_directory, send_file, render_template, redirect, url_for
 
 
 app = Flask(__name__)
@@ -35,12 +35,35 @@ def rp(command):
 def forumIndex():
     return render_template('index.html')
 
-@app.route('/forum/profile')
-def profileIndex():
-    return render_template('profile.html')
+@app.route('/screen.css')
+def cssIndex():
+    return redirect(url_for('static', filename='styles/screen.css'))
 
-@app.route('/forum/topics')
+@app.route('/forum/profile', methods = ['POST', 'GET'])
+def profileIndex():
+    if request.method == 'POST':
+      value0 = request.form['usernamerepresentation']
+      value = value0
+    elif 'usernamerepresentation' in request.cookies:
+        value0 = cPickle.loads(b64decode(request.cookies['usernamerepresentation']))
+
+    return render_template('profile.html', username=value0)
+
+@app.route('/forum/topics', methods = ['POST', 'GET'])
 def topicsIndex():
+    if request.method == 'POST':
+         expression = request.form['recapcha']
+         if expression == "'" or expression == '"' or expression == '""' or expression == "''":
+            return """
+            <html>
+                  <body>""" + "Result: Text only numbers otherwise your session will end." + """
+                  </body>
+               </html>
+               """
+         recapchaVal = str(eval(expression)).replace('\n', '\n<br>')
+      
+
+    
     return render_template('topic.html')
 
 @app.route('/')
@@ -134,7 +157,6 @@ def per1235123666666666666fdfdfsdffsdsd6666666profdsadsadsadasile():
         value0 = request.form['value']
         value = value0
     elif 'value' in request.cookies:
-        print((request.cookies['value']))
         value0 = cPickle.loads(b64decode(request.cookies['value']))
     form = """
     <html>

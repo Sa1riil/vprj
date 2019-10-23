@@ -9,7 +9,7 @@
 <meta name="copyright" content="Copyright Goes Here" />
 <meta name="description" content="Description Goes Here" />
 <meta name="keywords" content="And, Finally, Keywords Go Here." />
-<link rel="stylesheet" type="text/css" media="screen" href="screen.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/screen.css" />
 <!--[if lt ie 7]><link rel="stylesheet" type="text/css" media="screen" href="ie-win.css" /><![endif]-->
 </head>
 <body>
@@ -18,9 +18,9 @@
 </div>
 <div id="navigation">
   <ul>
-    <li id="lhome"><a href="#00">Home</a></li>
-    <li id="lsolutions"><a href="#02">Profile</a></li>
-    <li id="lmysterious" class="active"><a href="#03">Forum</a></li>
+    <li id="lhome" ><a href="/forum">Home</a></li>
+    <li id="lsolutions"><a href="/forum/profile">Profile</a></li>
+    <li id="lmysterious" class="active"><a href="/forum/topics">Forum</a></li>
   </ul>
 </div>
 <div id="wrapper">
@@ -28,7 +28,7 @@
     <div id="content">
 
         <div class="pageContainer">
-            <a name=top></a><h1><a href="./forum.php" style='font-size:13px'>Forum Index</a> &gt; <a href=?action=viewforum&forumid=9 style='font-size:13px'>Filme, Cinematografie</a> &gt; <a style='font-size:13px' href=?action=viewforum&forumid=9&subcat=21>Seriale</a> &gt; Универ</h1>
+            <a name=top></a><h1><a href="/forum/topics" style='font-size:13px'>Forum Index</a> &gt; <a href=?action=viewforum&forumid=9 style='font-size:13px'>Filme, Cinematografie</a> &gt; <a style='font-size:13px' href=?action=viewforum&forumid=9&subcat=21>Seriale</a> &gt; Универ</h1>
             <table class="main " border=0 cellspacing=0 cellpadding=0><tr><td class=embedded>
             <table width=100% border=1 id=forumPosts_first cellspacing=0 cellpadding=1><tr><td>
             <div style="margin: 0pt 11px 11px; max-width: 966px; width: 100%;"><a name=5218934></a>
@@ -56,7 +56,7 @@
             </div>
             <div style="width:740;text-align:center"><h1>Răspuns</h1></div>
            
-            <form method="post" action="forum.php" name="topic_msg" enctype="multipart/form-data" onsubmit="return submitPostAjax();">
+            <form method="post" action="/forum/topics" name="topic_msg" enctype="multipart/form-data" onsubmit="return submitPostAjax();">
               <input type="hidden" name="action" value="post">
               <input type="hidden" name="topicid" value="347052">
               Conţinut:<br />
@@ -66,7 +66,7 @@
             
               <br />
               <div id="after_comment_box" class=""></div>
-              <div class="heading" valign="top" align="left"> <p> Recapcha: 2 + 2  </p> <br>  <input type=text size=10 name=postsperpage value=""> 
+              <div class="heading" valign="top" align="left"> <p> Recapcha: scrieti 2 + 2 ca si alta operatie matematica </p> <br>  <input type=text size=10 name=recapcha value=""> 
                 <br><br><br>
        
               <input type="submit" value="Trimite răspunsul"> <br><br>
