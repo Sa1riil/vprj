@@ -1,3 +1,7 @@
+Aplicatie lasata intentionat vulnerabila pentru examenul de la cursul SSP de la facultate: Am acoperit 6 vulnerabilitati:
+
+
+
 python -O -m py_compile main.py
 Python2.
 Rezolvare:
