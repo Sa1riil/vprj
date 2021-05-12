@@ -91,9 +91,9 @@ def topicsIndex():
 def index():
     return """
     <html>
-    <head><title>SLA 410 - Iurie si Gabriel: """ + CONFIG['app_name'] +"""</title></head>
+    <head><title>StreamWide test: """ + CONFIG['app_name'] +"""</title></head>
     <body>
-        <p><h3>SLA410 e-commerce website</h3></p>
+        <p><h3>StreamWide e-commerce website</h3></p>
         <a href="/personalized_profile">Personalize your profile </a><br>
         <a href="/lookup">Find more about our clients websites </a><br>
         <a href="/evaluate_prices">Calculate prices </a><br>
