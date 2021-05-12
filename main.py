@@ -19,7 +19,7 @@ app = Flask(__name__)
 KEY=Random.new().read(32) # 256 bit key for extra security!!!
 BLOCKSIZE=AES.block_size
 ADMIN_SECRET=Random.new().read(32) # need to keep this secret
-APP_NAME = 'SLA 410'
+APP_NAME = 'StreamWide test'
 
 CONFIG = {
     'encrypto_key' : b64encode(KEY),
@@ -94,10 +94,10 @@ def index():
     <head><title>SLA 410 - Iurie si Gabriel: """ + CONFIG['app_name'] +"""</title></head>
     <body>
         <p><h3>SLA410 e-commerce website</h3></p>
-        <a href="/personalized_profile">Personalize your profile - Deserialization? DONE</a><br>
-        <a href="/lookup">Find more about our clients websites - command exec</a><br>
-        <a href="/evaluate_prices">Calculate prices - python code injection DONE</a><br>
-        <a href="/sayhi">Receive a personalised greeting - template injection \{\{ '7'*7 \}\} DONE</a><br>
+        <a href="/personalized_profile">Personalize your profile </a><br>
+        <a href="/lookup">Find more about our clients websites </a><br>
+        <a href="/evaluate_prices">Calculate prices </a><br>
+        <a href="/sayhi">Receive a personalised greeting </a><br>
         <a href="/
     </body>
     </html>
