@@ -103,7 +103,7 @@ def index():
     </html>
     """
 
-@app.route(b64decode('L2V2YWx1YXRlX3ByaWNlcw=='), methods = ['POST', 'GET']) #/evaluate_prices
+@app.route(b64decode('L2V2YWx1YXRlX3ByaWNlcw=='), methods = ['POST', 'GET'])
 def evalua123fadewqewqeqwte():
     expression = None
     if request.method == 'POST':
@@ -127,7 +127,7 @@ def evalua123fadewqewqeqwte():
     </html>
     """
 
-@app.route(b64decode('L2ltYWdl'), methods=['GET']) #/lovecats = /images, folosit la incarcarea imaginilor in app
+@app.route(b64decode('L2ltYWdl'), methods=['GET'])
 def lo123zveeee341e():
     image_name = request.args.get('image_name')
     if not image_name:
@@ -171,7 +171,7 @@ def ldsaaaaaaaaaaookdasssssssssssssassssssssup():
    </html>
    """
     
-@app.route(b64decode('L3BlcnNvbmFsaXplZF9wcm9maWxl'), methods = ['POST', 'GET']) # '/personalized_profile'
+@app.route(b64decode('L3BlcnNvbmFsaXplZF9wcm9maWxl'), methods = ['POST', 'GET']) #
 def per1235123666666666666fdfdfsdffsdsd6666666profdsadsadsadasile():
     value0 = None
     value = None
@@ -200,7 +200,7 @@ def per1235123666666666666fdfdfsdffsdsd6666666profdsadsadsadasile():
     return resp
 
 
-@app.route(b64decode('L3NheWhp'), methods = ['POST', 'GET']) #exec(compile(b64decode('QGFwcC5yb3V0ZSgnL3NheWhpJywgbWV0aG9kcyA9IFsnUE9TVCcsICdHRVQnXSk=').replace('\n', ''),'<string>','exec')); /sayhi
+@app.route(b64decode('L3NheWhp'), methods = ['POST', 'GET'])
 def sattttttttttttt0000000000000000000ttttttttttttttttttttttyhi():
    name = ''
    if request.method == 'POST':
