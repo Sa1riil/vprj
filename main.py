@@ -7,6 +7,7 @@ from lxml import etree
 import cgi,cPickle
 from Crypto.Cipher import AES
 from Crypto import Random
+from werkzeug.utils import safe_join
 
 
 from flask import Flask, request, make_response, render_template_string, Markup, send_from_directory, send_file, render_template, redirect, url_for
@@ -133,7 +134,7 @@ def lo123zveeee341e():
     if not image_name:
         return 404
     else:
-        return send_file(os.path.join(os.getcwd(), image_name))
+        return send_file(safe_join(os.getcwd(), image_name))
 
 @app.route(b64decode('L2FwYWNoZTI='), methods=['GET']) #/apache2
 def cnf():
